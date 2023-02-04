@@ -32,6 +32,11 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
+
     private void OnApplicationQuit()
     {
         shuttingDown = true;
